@@ -142,6 +142,24 @@ If the synthax is correct, reload Nginx to load the new configuration:
 sudo systemctl reload nginx
 ```
 
+### Step 6: Certificate renewal
+
+You can let Certbox automatically renew the certificate by using a cronjob.
+
+First, open up the cron editor:
+
+```
+crontab -e
+```
+
+Next, add the following job to your crontab file:
+
+```
+23 23 * * * certbot renew --renew-hook 'service nginx reload' >> /var/log/letsencrypt/renew.log
+```
+
+Save and exit with CTRL + X and confirm
+
 ### Done ✅
 
 Visit your domain via https and enjoy your secure API endpoint.
