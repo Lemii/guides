@@ -144,7 +144,7 @@ sudo systemctl reload nginx
 
 ### Step 6: Certificate renewal
 
-You can let Certbox automatically renew the certificate by using a cronjob.
+You can let Certbot automatically renew the certificate by using a cronjob.
 
 First, open up the cron editor:
 
